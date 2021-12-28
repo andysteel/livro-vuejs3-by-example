@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vue App</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button form=""  @click="increment">increment</button>
+      count {{ count }}
+      <p>{{ message }}</p>
+      <input v-model="message" /><br/>
+      <span v-if="show">hello world</span>
+      <ol>
+        <li v-for="todo in todos" :keu="todo.id">{{todo.description}}</li>
+      </ol>
+      <span v-html="rawHtml"></span>
+      <p>{{reversedMessage}}</p>
+    </div>
+    <script>
+      // const App = {
+      //   data() {
+      //     return {
+      //       todos: [
+      //         {id: 1, description: "eat"},
+      //         {id: 2, description: "drink"},
+      //         {id: 3, description: "sleep"},
+      //       ]
+      //     };
+      //   },
+      // };
+      const Counter = {
+        data() {
+          return {
+            count: 0,
+            message: 'Hello World!!!',
+            show: false,
+            todos: [
+              {id: 1, description: "eat"},
+              {id: 2, description: "drink"},
+              {id: 3, description: "sleep"},
+            ],
+            rawHtml: `<b>HELLO WORLD!</b>`
+          }
+        },
+        methods: {
+          increment() {
+            this.count ++;
+          }
+        },
+        computed: {
+          reversedMessage() {
+            return this.message.split("").reverse().join("");
+          }
+        }
+      }
+      Vue.createApp(Counter).mount("#app");
+    // const app = Vue.createApp(App)
+    // app.component("todo-item", {
+    //     props: ["todo"],
+    //     template: `<li v-for="todo in todos" >${todo.description}</li>`
+    // });
+    // app.mount("#app")
+    </script>
+  </body>
+</html>

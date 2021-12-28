@@ -1,0 +1,8 @@
+#install de vue cli
+$ npm install -g @vue/cli@next
+
+#create the app
+$ vue create github-app
+
+#add pwa support
+$ vue add pwa
