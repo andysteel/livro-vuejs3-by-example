@@ -6,3 +6,12 @@ $ vue create github-app
 
 #add pwa support
 $ vue add pwa
+
+#building th app
+$ npm run build
+
+#install browser-sync to serve pwa
+$ npm install -g browser-sync
+
+#enter into dist folder and run browser-sync
+$ browser-sync
